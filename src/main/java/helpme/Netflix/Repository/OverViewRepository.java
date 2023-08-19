@@ -1,4 +1,9 @@
 package helpme.Netflix.Repository;
 
-public interface OverViewRepository {
+import helpme.Netflix.DAO.Overview;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface OverViewRepository extends JpaRepository<Overview, Long> {
 }
