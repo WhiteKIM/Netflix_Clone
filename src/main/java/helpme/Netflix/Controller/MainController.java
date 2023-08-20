@@ -9,4 +9,8 @@ public class MainController {
     public String Home() {
         return "main";
     }
+
+    // 상세페이지는 팝업 화면으로 보여주자~
+
+    // 로그인 화면도 팝업으로 보여준다.
 }

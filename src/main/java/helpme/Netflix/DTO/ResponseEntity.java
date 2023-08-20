@@ -1,0 +1,13 @@
+package helpme.Netflix.DTO;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ResponseEntity<T>{
+    int status;
+    T message;
+}
