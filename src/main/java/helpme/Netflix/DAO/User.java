@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +17,8 @@ public class User {
     private String nickname;
 
     // 연관관계
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Review> reviews;
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Rate> rates;
 }

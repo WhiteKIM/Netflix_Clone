@@ -18,9 +18,9 @@ public class Overview {
     private Timestamp createTime;
 
     // 연관관계
-    @OneToMany
+    @OneToMany(mappedBy = "overview")
     private List<Rate> rates;
-    @OneToMany
+    @OneToMany(mappedBy = "overview")
     private List<Review> reviews;
     @OneToOne
     private Video video;

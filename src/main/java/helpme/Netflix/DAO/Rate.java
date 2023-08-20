@@ -12,8 +12,10 @@ public class Rate {
 
     // 연관관게
     @ManyToOne
+    @JoinColumn(name = "users_id")
     private User user;
 
     @ManyToOne
+    @JoinColumn(name = "overview_id")
     private Overview overview;
 }
