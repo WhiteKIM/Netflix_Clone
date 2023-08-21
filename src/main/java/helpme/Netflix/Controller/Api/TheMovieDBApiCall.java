@@ -52,4 +52,54 @@ public class TheMovieDBApiCall {
              throw new RuntimeJsonMappingException("데이터가 없습니다");
          }
      }
+
+    public JsonNode getGenreMovieJson(String key) {
+        try {
+            URL url = new URL("https://api.themoviedb.org/3"+requestMap.get(key));
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("accept", "application/json");
+            conn.setRequestProperty("Authorization", "Bearer "+apiKey);
+            conn.setDoOutput(true);
+
+            // 서버로부터 데이터 읽어오기
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+
+            while((line = br.readLine()) != null) { // 읽을 수 있을 때 까지 반복
+                sb.append(line);
+            }
+            ObjectMapper objectMapper = new ObjectMapper();
+            return objectMapper.readTree(sb.toString());
+        } catch(Exception e) {
+            e.printStackTrace();
+            throw new RuntimeJsonMappingException("데이터가 없습니다");
+        }
+    }
+
+    public JsonNode getSpecifyMovieJson(String movieId) {
+        try {
+            URL url = new URL("https://api.themoviedb.org/3/movie/"+movieId+"?append_to_response=videos");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("accept", "application/json");
+            conn.setRequestProperty("Authorization", "Bearer "+apiKey);
+            conn.setDoOutput(true);
+
+            // 서버로부터 데이터 읽어오기
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+
+            while((line = br.readLine()) != null) { // 읽을 수 있을 때 까지 반복
+                sb.append(line);
+            }
+            ObjectMapper objectMapper = new ObjectMapper();
+            return objectMapper.readTree(sb.toString());
+        } catch(Exception e) {
+            e.printStackTrace();
+            throw new RuntimeJsonMappingException("데이터가 없습니다");
+        }
+    }
 }

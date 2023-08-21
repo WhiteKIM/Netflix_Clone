@@ -31,15 +31,4 @@ public class ResponseOverViewDTO {
         this.reviews = reviews;
         this.video = video;
     }
-
-   public ResponseOverViewDTO toDto(Overview overview) {
-       return ResponseOverViewDTO.builder()
-               .id(overview.getId())
-               .content(overview.getContent())
-               .timestamp(overview.getCreateTime())
-               .rates(overview.getRates())
-               .reviews(overview.getReviews())
-               .video(overview.getVideo())
-               .build();
-   }
 }
