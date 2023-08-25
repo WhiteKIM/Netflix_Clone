@@ -37,3 +37,6 @@
 
 ## 참고 자료
 - https://codepen.io/cb2307/pen/XYxyeY -> HTML 디자인
+- https://codepen.io/iPingOi/pen/wvmoVwp -> 코드 디자인, 세부정보 페이지
+- https://codepen.io/levente-frks/pen/NVNxPm -> 로그인 페이지
+- https://codepen.io/lbnt/full/jOPgrjV -> 검색 페이지

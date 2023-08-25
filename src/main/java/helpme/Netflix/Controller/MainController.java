@@ -15,7 +15,7 @@ public class MainController {
 
     @GetMapping("/details/{id}")
     public String detailForm(@PathVariable long id, Model model) {
-        model.addAttribute("Overview")
+//        model.addAttribute("Overview");
         return "Page/DetailForm";
     }
     // 로그인 화면도 팝업으로 보여준다.
